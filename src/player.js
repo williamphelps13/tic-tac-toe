@@ -5,11 +5,11 @@ class Player {
     this.wins: wins;
   }
 
-  saveWinsToStorage() {
-
-  }
-
-  retrieveWinsFromStorage() {
-    
-  }
+  // saveWinsToStorage() {
+  //
+  // }
+  //
+  // retrieveWinsFromStorage() {
+  //
+  // }
 }
