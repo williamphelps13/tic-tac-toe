@@ -32,6 +32,11 @@ class Game {
       console.log(`${this.playerOne["token"]} won!`);
       this.resetBoard();
     }
+
+    resetBoard(board) {
+      this.board.one = [];
+      this.board.two = [];
+    }
   }
 }
 
