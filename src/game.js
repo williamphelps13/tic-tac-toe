@@ -33,6 +33,13 @@ class Game {
       this.resetBoard();
     }
 
+    checkForDraw() {
+    if (this.board.one.length === 5 || this.board.two.length === 5) {
+      console.log("It's a draw");
+      resetBoard()
+      }
+    }
+    
     resetBoard(board) {
       this.board.one = [];
       this.board.two = [];
