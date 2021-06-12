@@ -5,15 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles.css">
-    <title>Tic-Tac-Toe</title>
+    <title>Tic Tac Toe</title>
   </head>
   <body>
-    <section>
-      <img class="player-one-token" src="" alt="Dog token for player one">
+    <section class="wins-panel">
+      <img class="player-token" src="assets/Dog_Emoji_large.png" alt="Dog token for player one">
       <h2>0 wins</h2>
     </section>
     <main>
-      <h1 class="turn-heading">It's <span><img class="player-turn-token" src="" alt="Toggles on turn change between player icons"></span>'s turn</h1>
+      <div class="turn-header">
+        <h2>It's</h2>
+          <span>
+            <img class="player-turn-token" src="assets/Dog_Emoji_large.png" alt="Turn toggle icon">
+          </span>
+        <h2>'s turn</h2>
+      </div>
       <section class="game-board">
         <button class="square-1"></button>
         <button class="square-2"></button>
@@ -26,8 +32,8 @@
         <button class="square-9"></button>
       </section>
     </main>
-    <section>
-      <img class="player-two-token" src="" alt="Cat token for player two">
+    <section class="wins-panel">
+      <img class="player-token" src="assets/Happy_cat_emoji.png" alt="Cat token for player two">
       <h2>0 wins</h2>
     </section>
     <script type="text/javascript" src="src/player.js"></script>
