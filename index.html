@@ -10,31 +10,31 @@
   <body>
     <section class="wins-panel">
       <img class="player-token" src="assets/Dog_Emoji_large.png" alt="Dog token for player one">
-      <h2>0 wins</h2>
+      <h2 id="headerPlayer1Wins">0 wins</h2>
     </section>
     <main>
       <div class="turn-header">
         <h2>It's</h2>
           <span>
-            <img class="player-turn-token" src="assets/Dog_Emoji_large.png" alt="Turn toggle icon">
+            <img id="imageTurns" class="player-turn-token" src="assets/Dog_Emoji_large.png" alt="Turn toggle icon">
           </span>
         <h2>'s turn</h2>
       </div>
-      <section class="game-board">
-        <button class="square-1"></button>
-        <button class="square-2"></button>
-        <button class="square-3"></button>
-        <button class="square-4"></button>
-        <button class="square-5"></button>
-        <button class="square-6"></button>
-        <button class="square-7"></button>
-        <button class="square-8"></button>
-        <button class="square-9"></button>
+      <section id="gameBoard" class="game-board">
+        <button id="square1" class="square-1"></button>
+        <button id="square2" class="square-2"></button>
+        <button id="square3" class="square-3"></button>
+        <button id="square4" class="square-4"></button>
+        <button id="square5" class="square-5"></button>
+        <button id="square6" class="square-6"></button>
+        <button id="square7" class="square-7"></button>
+        <button id="square8" class="square-8"></button>
+        <button id="square9" class="square-9"></button>
       </section>
     </main>
     <section class="wins-panel">
       <img class="player-token" src="assets/Happy_cat_emoji.png" alt="Cat token for player two">
-      <h2>0 wins</h2>
+      <h2 id="headerPlayer2Wins">0 wins</h2>
     </section>
     <script type="text/javascript" src="src/player.js"></script>
     <script type="text/javascript" src="src/game.js"></script>
