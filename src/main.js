@@ -15,3 +15,12 @@ var headerPlayer2Wins = document.querySelector("#headerPlayer2Wins");
 
 // Global Variables
 var currentGame = new Game();
+
+// Event Listeners
+// window.addEventListener('load', retrieveWinsFromStorage)
+gameBoard.addEventListener('click', placeToken)
+
+// Functions
+function placeToken() {
+
+};
