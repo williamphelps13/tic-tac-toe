@@ -12,3 +12,6 @@ var square7 = document.querySelector("#square7");
 var square8 = document.querySelector("#square8");
 var square9 = document.querySelector("#square9");
 var headerPlayer2Wins = document.querySelector("#headerPlayer2Wins");
+
+// Global Variables
+var currentGame = new Game();
