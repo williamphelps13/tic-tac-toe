@@ -27,6 +27,7 @@ function placeToken(event) {
   checkTurn(clickedSquare)
   changeTurn()
   currentGame.checkBothPlayers();
+  renderBoard()
 };
 
 function checkTurn(clickedSquare) {
@@ -41,6 +42,14 @@ function checkTurn(clickedSquare) {
 
 function changeTurn() {
   currentGame.turn ++
+};
+
+function renderBoard() {
+  // for (var i = 0; i < currentGame.board.one; i++) {
+    if (currentGame.board.one.includes(1)) {
+       square1.innerHTML = `<img class="player-token" src="assets/Dog_Emoji_large.png" alt="Dog token for player one">`
+    // }
+  }
 };
 
 // RENDER BOARD FROM THIS.BOARD
