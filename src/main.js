@@ -24,3 +24,23 @@ gameBoard.addEventListener('click', placeToken)
 function placeToken() {
 
 };
+
+
+//click
+//what is the closest square? >> 1
+//if this.turn is even add that 1 to this.board.one
+//if this.turn is odd add that 1 to this.board.one
+//increment this.turn by 1
+//loop through both this.board arrays and re-render board:
+  //if in this.board.one .src(dog.img)
+  //if in this.board.two .src(cat.img)
+//add disable to button?
+//checkForWin
+//checkForDraw
+
+//
+
+
+//If Win then announceWin will run --> .innerText("🐶/🐱 won!") AND resetBoard AND saveWinsToStorage AND innerText(this.playerOne.wins) AND innerText(this.playerTwo.wins)
+
+//If this.board.one/two.length === 5 --> .innerText("It's a draw")
