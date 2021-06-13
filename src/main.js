@@ -1,46 +1,61 @@
 // querySelectors
-var headerPlayer1Wins = document.querySelector("#headerPlayer1Wins");
-var imageTurns = document.querySelector("#imageTurns");
-var gameBoard = document.querySelector("#gameBoard");
-var square1 = document.querySelector("#square1");
-var square2 = document.querySelector("#square2");
-var square3 = document.querySelector("#square3");
-var square4 = document.querySelector("#square4");
-var square5 = document.querySelector("#square5");
-var square6 = document.querySelector("#square6");
-var square7 = document.querySelector("#square7");
-var square8 = document.querySelector("#square8");
-var square9 = document.querySelector("#square9");
-var headerPlayer2Wins = document.querySelector("#headerPlayer2Wins");
+var headerPlayer1Wins = document.getElementById('headerPlayer1Wins');
+var imageTurns = document.getElementById('imageTurns');
+var gameBoard = document.getElementById('gameBoard');
+var square1 = document.getElementById('1');
+var square2 = document.getElementById('2');
+var square3 = document.getElementById('3');
+var square4 = document.getElementById('4');
+var square5 = document.getElementById('5');
+var square6 = document.getElementById('6');
+var square7 = document.getElementById('7');
+var square8 = document.getElementById('8');
+var square9 = document.getElementById('9');
+var allSquares = document.querySelectorAll('button');
+var headerPlayer2Wins = document.getElementById('headerPlayer2Wins');
 
 // Global Variables
 var currentGame = new Game();
 
 // Event Listeners
-// window.addEventListener('load', retrieveWinsFromStorage)
-gameBoard.addEventListener('click', placeToken)
+gameBoard.addEventListener('click', function(event) {placeToken(event)});
 
 // Functions
-function placeToken() {
-
+function placeToken(event) {
+  event.preventDefault(event);
+  var clickedSquare = event.target.closest('button');
+  checkTurn(clickedSquare)
+  changeTurn()
+  currentGame.checkBothPlayers();
 };
 
+function checkTurn(clickedSquare) {
+  if (currentGame.turn % 2 === 0) {
+    currentGame.board.one.push(Number(clickedSquare.id));
+    imageTurns.src = currentGame.playerTwo.token;
+  } else if (currentGame.turn % 2 === 1) {
+    currentGame.board.two.push(Number(clickedSquare.id));
+    imageTurns.src = currentGame.playerOne.token;
+  }
+};
 
-//click
-//what is the closest square? >> 1
-//if this.turn is even add that 1 to this.board.one
-//if this.turn is odd add that 1 to this.board.one
-//increment this.turn by 1
-//loop through both this.board arrays and re-render board:
-  //if in this.board.one .src(dog.img)
-  //if in this.board.two .src(cat.img)
-//add disable to button?
-//checkForWin
-//checkForDraw
+function changeTurn() {
+  currentGame.turn ++
+};
 
-//
+// RENDER BOARD FROM THIS.BOARD
 
 
-//If Win then announceWin will run --> .innerText("🐶/🐱 won!") AND resetBoard AND saveWinsToStorage AND innerText(this.playerOne.wins) AND innerText(this.playerTwo.wins)
+// SHOW WIN PHRASE FROM AWARD AWARDWINNER
+// SHOW DRAW PHRASE FROM CHECKFORDRAW
+// STORE WINS IN LOCAL STORAGE
+// RETRIEVE WINS FROM LOCAL STORAGE
+// window.addEventListener('load', retrieveWinsFromStorage)
+// DISPLAY WINS ON SIDE PANEL
+// CLEAR BOARD
 
-//If this.board.one/two.length === 5 --> .innerText("It's a draw")
+
+
+  // clickedSquare.innerHTML = `<img class="player-token" src="assets/Dog_Emoji_large.png" alt="Dog token for player one">`
+
+  // clickedSquare.innerHTML = `<img class="player-token" src="assets/Happy_cat_emoji.png" alt="Cat token for player two">`
