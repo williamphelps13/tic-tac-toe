@@ -9,41 +9,41 @@ class Game {
 
   checkForWinOne() {
     if ([1, 2, 3].every(num => this.board.one.includes(num))) {
-      this.awardWinnerOne()
+      this.awardWinnerOne();
     } else if ([4, 5, 6].every(num => this.board.one.includes(num))) {
-      this.awardWinnerOne()
+      this.awardWinnerOne();
     } else if ([7, 8, 9].every(num => this.board.one.includes(num))) {
-      this.awardWinnerOne()
+      this.awardWinnerOne();
     } else if ([1, 4, 7].every(num => this.board.one.includes(num))) {
-      this.awardWinnerOne()
+      this.awardWinnerOne();
     } else if ([2, 5, 8].every(num => this.board.one.includes(num))) {
-      this.awardWinnerOne()
+      this.awardWinnerOne();
     } else if ([3, 6, 9].every(num => this.board.one.includes(num))) {
-      this.awardWinnerOne()
+      this.awardWinnerOne();
     } else if ([1, 5, 9].every(num => this.board.one.includes(num))) {
-      this.awardWinnerOne()
+      this.awardWinnerOne();
     } else if ([3, 5, 7].every(num => this.board.one.includes(num))) {
-      this.awardWinnerOne()
+      this.awardWinnerOne();
     }
   }
 
   checkForWinTwo() {
     if ([1, 2, 3].every(num => this.board.two.includes(num))) {
-      this.awardWinnerTwo()
+      this.awardWinnerTwo();
     } else if ([4, 5, 6].every(num => this.board.two.includes(num))) {
-      this.awardWinnerTwo()
+      this.awardWinnerTwo();
     } else if ([7, 8, 9].every(num => this.board.two.includes(num))) {
-      this.awardWinnerTwo()
+      this.awardWinnerTwo();
     } else if ([1, 4, 7].every(num => this.board.two.includes(num))) {
-      this.awardWinnerTwo()
+      this.awardWinnerTwo();
     } else if ([2, 5, 8].every(num => this.board.two.includes(num))) {
-      this.awardWinnerTwo()
+      this.awardWinnerTwo();
     } else if ([3, 6, 9].every(num => this.board.two.includes(num))) {
-      this.awardWinnerTwo()
+      this.awardWinnerTwo();
     } else if ([1, 5, 9].every(num => this.board.two.includes(num))) {
-      this.awardWinnerTwo()
+      this.awardWinnerTwo();
     } else if ([3, 5, 7].every(num => this.board.two.includes(num))) {
-      this.awardWinnerTwo()
+      this.awardWinnerTwo();
     }
   }
 
@@ -64,10 +64,14 @@ class Game {
   }
 
   checkForDraw() {
+    if (this.board.one.length === 5 || this.board.two.length === 5) {
+      this.currentWinner = "draw";
+      this.resetBoard();
+    }
   }
 
   resetBoard() {
    this.board.one = [];
    this.board.two = [];
   }
-}
+};
