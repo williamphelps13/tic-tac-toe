@@ -5,11 +5,10 @@ class Player {
     this.wins = wins;
   }
 
-  // saveWinsToStorage() {
-  //
-  // }
-  //
-  // retrieveWinsFromStorage() {
-  //
-  // }
+  saveWinsToStorage() {
+    var playerId = this.id;
+    localStorage.setItem(playerId, this.wins)
+  }
+
+  retrieveWinsFromStorage() {
 }
