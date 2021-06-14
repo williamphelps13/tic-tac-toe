@@ -20,7 +20,7 @@ var currentGame = new Game();
 
 // Event Listeners
 window.addEventListener('load', getWins);
-gameBoard.addEventListener('click', function(event) {placeToken(event)});
+gameBoard.addEventListener('click', placeToken);
 
 // Functions
 function getWins() {
@@ -31,29 +31,29 @@ function getWins() {
 
 function placeToken(event) {
   event.preventDefault(event);
+  var dogTurnHeader = '<h2>It\'s</h2> <span> <img id="imageTurns" class="player-turn-token" src="assets/Dog_Emoji_large.png" alt="Turn toggle icon"> </span> <h2>\'s turn</h2>';
+  var catTurnHeader = '<h2>It\'s</h2> <span> <img id="imageTurns" class="player-turn-token" src="assets/Happy_cat_emoji.png" alt="Turn toggle icon"> </span> <h2>\'s turn</h2>';
   var clickedSquare = event.target.closest('button');
-  checkTurn(clickedSquare)
+  checkTurn(clickedSquare, dogTurnHeader, catTurnHeader)
   renderBoard(currentGame.board.one,`<img class="player-token" src="assets/Dog_Emoji_large.png" alt="Dog token for player one">`)
   renderBoard(currentGame.board.two, `<img class="player-token" src="assets/Happy_cat_emoji.png" alt="Cat token for player two">`)
   currentGame.checkForWinOne();
   currentGame.checkForWinTwo();
   currentGame.checkForDraw()
-  updateOnWin()
+  updateOnWin(dogTurnHeader, catTurnHeader)
   currentGame.playerOne.saveWinsToStorage()
   currentGame.playerTwo.saveWinsToStorage()
   addWinsToHeader()
 };
 
-function checkTurn(clickedSquare) {
+function checkTurn(clickedSquare, dogTurnHeader, catTurnHeader) {
   if (currentGame.turn % 2 === 0 && !currentGame.board.one.includes(Number(clickedSquare.id)) && !currentGame.board.two.includes(Number(clickedSquare.id))) {
     currentGame.board.one.push(Number(clickedSquare.id));
-    turnHeader.innerHTML =
-    '<h2>It\'s</h2> <span> <img id="imageTurns" class="player-turn-token" src="assets/Happy_cat_emoji.png" alt="Turn toggle icon"> </span> <h2>\'s turn</h2>';
+    turnHeader.innerHTML = catTurnHeader;
     changeTurn()
   } else if (currentGame.turn % 2 === 1 && !currentGame.board.one.includes(Number(clickedSquare.id)) && !currentGame.board.two.includes(Number(clickedSquare.id))) {
     currentGame.board.two.push(Number(clickedSquare.id));
-    turnHeader.innerHTML =
-    '<h2>It\'s</h2> <span> <img id="imageTurns" class="player-turn-token" src="assets/Dog_Emoji_large.png" alt="Turn toggle icon"> </span> <h2>\'s turn</h2>';
+    turnHeader.innerHTML = dogTurnHeader;
     changeTurn()
   }
 };
@@ -62,70 +62,60 @@ function changeTurn() {
   currentGame.turn ++
 };
 
-function updateOnWin() {
+function updateOnWin(dogTurnHeader, catTurnHeader) {
   if (currentGame.currentWinner === "one") {
-    turnHeader.innerHTML = '<img class="player-won" src="assets/Dog_Emoji_large.png" alt="Dog token for player one"><h2>won!</h2>';
     currentGame.currentWinner = null;
+    turnHeader.innerHTML = '<img class="player-won" src="assets/Dog_Emoji_large.png" alt="Dog token for player one"><h2>won!</h2>';
+    gameBoard.removeEventListener('click', placeToken)
     setTimeout(function () {
-    square1.innerHTML = "";
-    square2.innerHTML = "";
-    square3.innerHTML = "";
-    square4.innerHTML = "";
-    square5.innerHTML = "";
-    square6.innerHTML = "";
-    square7.innerHTML = "";
-    square8.innerHTML = "";
-    square9.innerHTML = "";
-    if (currentGame.turn % 2 === 0) {
-      turnHeader.innerHTML =
-      '<h2>It\'s</h2> <span> <img id="imageTurns" class="player-turn-token" src="assets/Dog_Emoji_large.png" alt="Turn toggle icon"> </span> <h2>\'s turn</h2>'
-    } else {
-      turnHeader.innerHTML =
-      '<h2>It\'s</h2> <span> <img id="imageTurns" class="player-turn-token" src="assets/Happy_cat_emoji.png" alt="Turn toggle icon"> </span> <h2>\'s turn</h2>'
+      clearSquares()
+      if (currentGame.turn % 2 === 0) {
+        turnHeader.innerHTML = dogTurnHeader;
+        gameBoard.addEventListener('click', placeToken);
+      } else {
+        turnHeader.innerHTML = catTurnHeader;
+        gameBoard.addEventListener('click', placeToken);
     }}, 1000);
   } else if (currentGame.currentWinner === "two") {
     currentGame.currentWinner = null;
     turnHeader.innerHTML = '<img class="player-won" src="assets/Happy_cat_emoji.png" alt="Cat token for player two"><h2> won!</h2>';
+    gameBoard.removeEventListener('click', placeToken)
     setTimeout(function () {
-    square1.innerHTML = "";
-    square2.innerHTML = "";
-    square3.innerHTML = "";
-    square4.innerHTML = "";
-    square5.innerHTML = "";
-    square6.innerHTML = "";
-    square7.innerHTML = "";
-    square8.innerHTML = "";
-    square9.innerHTML = "";
-    if (currentGame.turn % 2 === 0) {
-      turnHeader.innerHTML =
-      '<h2>It\'s</h2> <span> <img id="imageTurns" class="player-turn-token" src="assets/Dog_Emoji_large.png" alt="Turn toggle icon"> </span> <h2>\'s turn</h2>'
-    } else {
-      turnHeader.innerHTML =
-      '<h2>It\'s</h2> <span> <img id="imageTurns" class="player-turn-token" src="assets/Happy_cat_emoji.png" alt="Turn toggle icon"> </span> <h2>\'s turn</h2>'
+      clearSquares()
+      if (currentGame.turn % 2 === 0) {
+        turnHeader.innerHTML = dogTurnHeader;
+        gameBoard.addEventListener('click', placeToken);
+      } else {
+        turnHeader.innerHTML = catTurnHeader;
+        gameBoard.addEventListener('click', placeToken);
     }}, 1000);
   } else if (currentGame.currentWinner === "draw") {
     currentGame.currentWinner = null;
     turnHeader.innerHTML = '<h2 class="player-draw">It\'s a draw!</h2>';
+    gameBoard.removeEventListener('click', placeToken)
     setTimeout(function () {
-    square1.innerHTML = "";
-    square2.innerHTML = "";
-    square3.innerHTML = "";
-    square4.innerHTML = "";
-    square5.innerHTML = "";
-    square6.innerHTML = "";
-    square7.innerHTML = "";
-    square8.innerHTML = "";
-    square9.innerHTML = "";
+    clearSquares()
     if (currentGame.turn % 2 === 0) {
-      turnHeader.innerHTML =
-      '<h2>It\'s</h2> <span> <img id="imageTurns" class="player-turn-token" src="assets/Dog_Emoji_large.png" alt="Turn toggle icon"> </span> <h2>\'s turn</h2>'
+      turnHeader.innerHTML = dogTurnHeader;
+      gameBoard.addEventListener('click', placeToken);
     } else {
-      turnHeader.innerHTML =
-      '<h2>It\'s</h2> <span> <img id="imageTurns" class="player-turn-token" src="assets/Happy_cat_emoji.png" alt="Turn toggle icon"> </span> <h2>\'s turn</h2>'
-    }
-    }, 1000);
+      turnHeader.innerHTML = catTurnHeader;
+      gameBoard.addEventListener('click', placeToken);
+    }}, 1000);
   }
 };
+
+function clearSquares() {
+  square1.innerHTML = "";
+  square2.innerHTML = "";
+  square3.innerHTML = "";
+  square4.innerHTML = "";
+  square5.innerHTML = "";
+  square6.innerHTML = "";
+  square7.innerHTML = "";
+  square8.innerHTML = "";
+  square9.innerHTML = "";
+}
 
 function renderBoard(playerBoard, token) {
   if (playerBoard.includes(1)) {
