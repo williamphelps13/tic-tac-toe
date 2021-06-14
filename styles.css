@@ -121,3 +121,7 @@ button {
   width: 10vh;
   padding: 5vh 1vw 4vh 1.2vw;
 }
+
+.player-draw {
+  padding-top: 5vh
+}
