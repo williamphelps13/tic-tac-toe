@@ -1,6 +1,9 @@
 class Game {
   constructor() {
-    this.board = {one: [], two: []};
+    this.board = {
+      one: [],
+      two: []
+    };
     this.turn = 0;
     this.currentWinner = null;
     this.playerOne = new Player(1, 'assets/Dog_Emoji_large.png', 0);
@@ -41,12 +44,12 @@ class Game {
     } else if (player === this.playerTwo) {
       this.currentWinner = "two";
     }
-    
+
     this.resetBoard();
   }
 
   addToWins(player) {
-    player.wins ++;
+    player.wins++;
   }
 
   checkForDraw() {
@@ -57,7 +60,7 @@ class Game {
   }
 
   resetBoard() {
-   this.board.one = [];
-   this.board.two = [];
+    this.board.one = [];
+    this.board.two = [];
   }
 };
