@@ -32,7 +32,9 @@ function placeToken(event) {
   currentGame.checkForWinOne();
   currentGame.checkForWinTwo();
   updateOnWin()
-
+  currentGame.playerOne.saveWinsToStorage()
+  currentGame.playerTwo.saveWinsToStorage()
+  addWinsToHeader()
 };
 
 function checkTurn(clickedSquare) {
@@ -138,3 +140,8 @@ function renderBoard(playerBoard, token) {
   if (playerBoard.includes(9)) {
     square9.innerHTML = token; }
 };
+
+function addWinsToHeader() {
+  headerPlayer1Wins.innerText = `${currentGame.playerOne.wins} wins`;
+  headerPlayer2Wins.innerText = `${currentGame.playerTwo.wins} wins`;
+}
