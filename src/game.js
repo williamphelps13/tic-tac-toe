@@ -7,55 +7,41 @@ class Game {
     this.playerTwo = new Player(2, 'assets/Happy_cat_emoji.png', 0);
   }
 
-  checkForWinOne() {
-    if ([1, 2, 3].every(num => this.board.one.includes(num))) {
-      this.awardWinnerOne();
-    } else if ([4, 5, 6].every(num => this.board.one.includes(num))) {
-      this.awardWinnerOne();
-    } else if ([7, 8, 9].every(num => this.board.one.includes(num))) {
-      this.awardWinnerOne();
-    } else if ([1, 4, 7].every(num => this.board.one.includes(num))) {
-      this.awardWinnerOne();
-    } else if ([2, 5, 8].every(num => this.board.one.includes(num))) {
-      this.awardWinnerOne();
-    } else if ([3, 6, 9].every(num => this.board.one.includes(num))) {
-      this.awardWinnerOne();
-    } else if ([1, 5, 9].every(num => this.board.one.includes(num))) {
-      this.awardWinnerOne();
-    } else if ([3, 5, 7].every(num => this.board.one.includes(num))) {
-      this.awardWinnerOne();
+
+  checkPlayers() {
+    this.checkForWin(this.board.one, this.playerOne);
+    this.checkForWin(this.board.two, this.playerTwo);
+  }
+
+  checkForWin(playerBoard, player) {
+    if ([1, 2, 3].every(num => playerBoard.includes(num))) {
+      this.awardWinner(player);
+    } else if ([4, 5, 6].every(num => playerBoard.includes(num))) {
+      this.awardWinner(player);
+    } else if ([7, 8, 9].every(num => playerBoard.includes(num))) {
+      this.awardWinner(player);
+    } else if ([1, 4, 7].every(num => playerBoard.includes(num))) {
+      this.awardWinner(player);
+    } else if ([2, 5, 8].every(num => playerBoard.includes(num))) {
+      this.awardWinner(player);
+    } else if ([3, 6, 9].every(num => playerBoard.includes(num))) {
+      this.awardWinner(player);
+    } else if ([1, 5, 9].every(num => playerBoard.includes(num))) {
+      this.awardWinner(player);
+    } else if ([3, 5, 7].every(num => playerBoard.includes(num))) {
+      this.awardWinner(player);
     }
   }
 
-  checkForWinTwo() {
-    if ([1, 2, 3].every(num => this.board.two.includes(num))) {
-      this.awardWinnerTwo();
-    } else if ([4, 5, 6].every(num => this.board.two.includes(num))) {
-      this.awardWinnerTwo();
-    } else if ([7, 8, 9].every(num => this.board.two.includes(num))) {
-      this.awardWinnerTwo();
-    } else if ([1, 4, 7].every(num => this.board.two.includes(num))) {
-      this.awardWinnerTwo();
-    } else if ([2, 5, 8].every(num => this.board.two.includes(num))) {
-      this.awardWinnerTwo();
-    } else if ([3, 6, 9].every(num => this.board.two.includes(num))) {
-      this.awardWinnerTwo();
-    } else if ([1, 5, 9].every(num => this.board.two.includes(num))) {
-      this.awardWinnerTwo();
-    } else if ([3, 5, 7].every(num => this.board.two.includes(num))) {
-      this.awardWinnerTwo();
+  awardWinner(player) {
+    this.addToWins(player);
+
+    if (player === this.playerOne) {
+      this.currentWinner = "one";
+    } else if (player === this.playerTwo) {
+      this.currentWinner = "two";
     }
-  }
-
-  awardWinnerOne() {
-    this.addToWins(this.playerOne);
-    this.currentWinner = "one";
-    this.resetBoard();
-  }
-
-  awardWinnerTwo() {
-    this.addToWins(this.playerTwo);
-    this.currentWinner = "two";
+    
     this.resetBoard();
   }
 
