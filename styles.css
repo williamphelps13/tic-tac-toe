@@ -115,3 +115,9 @@ button {
   border-right: none;
   border-bottom: none;
 }
+
+.player-won {
+  height: 10vh;
+  width: 10vh;
+  padding: 5vh 1vw 4vh 1.2vw;
+}
