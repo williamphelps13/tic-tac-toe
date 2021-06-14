@@ -19,9 +19,16 @@ var headerPlayer2Wins = document.getElementById('headerPlayer2Wins');
 var currentGame = new Game();
 
 // Event Listeners
+window.addEventListener('load', getWins);
 gameBoard.addEventListener('click', function(event) {placeToken(event)});
 
 // Functions
+function getWins() {
+ currentGame.playerOne.retrieveWinsFromStorage();
+ currentGame.playerTwo.retrieveWinsFromStorage();
+ addWinsToHeader()
+}
+
 function placeToken(event) {
   event.preventDefault(event);
   var clickedSquare = event.target.closest('button');
