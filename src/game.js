@@ -6,8 +6,8 @@ class Game {
     };
     this.turn = 0;
     this.currentWinner = null;
-    this.playerOne = new Player(1, 'assets/Dog_Emoji_large.png', 0);
-    this.playerTwo = new Player(2, 'assets/Happy_cat_emoji.png', 0);
+    this.playerOne = new Player("one", 'assets/Dog_Emoji_large.png', 0);
+    this.playerTwo = new Player("two", 'assets/Happy_cat_emoji.png', 0);
   }
 
 
