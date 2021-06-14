@@ -27,7 +27,7 @@ function getWins() {
  currentGame.playerOne.retrieveWinsFromStorage();
  currentGame.playerTwo.retrieveWinsFromStorage();
  addWinsToHeader()
-}
+};
 
 function placeToken() {
   var dogTurnHeader = '<h2>It\'s</h2> <span> <img id="imageTurns" class="player-turn-token" src="assets/Dog_Emoji_large.png" alt="Turn toggle icon"> </span> <h2>\'s turn</h2>';
@@ -36,8 +36,7 @@ function placeToken() {
   checkTurn(clickedSquare, dogTurnHeader, catTurnHeader)
   renderBoard(currentGame.board.one,`<img class="player-token" src="assets/Dog_Emoji_large.png" alt="Dog token for player one">`)
   renderBoard(currentGame.board.two, `<img class="player-token" src="assets/Happy_cat_emoji.png" alt="Cat token for player two">`)
-  currentGame.checkForWinOne();
-  currentGame.checkForWinTwo();
+  currentGame.checkPlayers()
   currentGame.checkForDraw()
   updateOnWin(dogTurnHeader, catTurnHeader)
   currentGame.playerOne.saveWinsToStorage()
