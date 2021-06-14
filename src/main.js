@@ -35,9 +35,9 @@ function placeToken(event) {
   checkTurn(clickedSquare)
   renderBoard(currentGame.board.one,`<img class="player-token" src="assets/Dog_Emoji_large.png" alt="Dog token for player one">`)
   renderBoard(currentGame.board.two, `<img class="player-token" src="assets/Happy_cat_emoji.png" alt="Cat token for player two">`)
-  currentGame.checkForDraw()
   currentGame.checkForWinOne();
   currentGame.checkForWinTwo();
+  currentGame.checkForDraw()
   updateOnWin()
   currentGame.playerOne.saveWinsToStorage()
   currentGame.playerTwo.saveWinsToStorage()
@@ -105,7 +105,7 @@ function updateOnWin() {
     }}, 1000);
   } else if (currentGame.currentWinner === "draw") {
     currentGame.currentWinner = null;
-    turnHeader.innerHTML = '<h2>It\'s a draw!</h2>';
+    turnHeader.innerHTML = '<h2 class="player-draw">It\'s a draw!</h2>';
     setTimeout(function () {
     square1.innerHTML = "";
     square2.innerHTML = "";
