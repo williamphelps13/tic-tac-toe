@@ -24,9 +24,9 @@ gameBoard.addEventListener('click', placeToken);
 
 // Functions
 function getWins() {
- currentGame.playerOne.retrieveWinsFromStorage();
- currentGame.playerTwo.retrieveWinsFromStorage();
- addWinsToHeader()
+  currentGame.playerOne.retrieveWinsFromStorage();
+  currentGame.playerTwo.retrieveWinsFromStorage();
+  addWinsToHeader()
 };
 
 function placeToken() {
@@ -34,7 +34,7 @@ function placeToken() {
   var catTurnHeader = '<h2>It\'s</h2> <span> <img id="imageTurns" class="player-turn-token" src="assets/Happy_cat_emoji.png" alt="Turn toggle icon"> </span> <h2>\'s turn</h2>';
   var clickedSquare = event.target.closest('button');
   checkTurn(clickedSquare, dogTurnHeader, catTurnHeader)
-  renderBoard(currentGame.board.one,`<img class="player-token" src="assets/Dog_Emoji_large.png" alt="Dog token for player one">`)
+  renderBoard(currentGame.board.one, `<img class="player-token" src="assets/Dog_Emoji_large.png" alt="Dog token for player one">`)
   renderBoard(currentGame.board.two, `<img class="player-token" src="assets/Happy_cat_emoji.png" alt="Cat token for player two">`)
   currentGame.checkPlayers()
   currentGame.checkForDraw()
@@ -57,7 +57,7 @@ function checkTurn(clickedSquare, dogTurnHeader, catTurnHeader) {
 };
 
 function changeTurn() {
-  currentGame.turn ++
+  currentGame.turn++
 };
 
 function updateOnWin(dogTurnHeader, catTurnHeader) {
@@ -80,7 +80,7 @@ function updateOnWin(dogTurnHeader, catTurnHeader) {
 };
 
 function delayDisplay(dogTurnHeader, catTurnHeader) {
-  setTimeout(function () {
+  setTimeout(function() {
     clearSquares()
     if (currentGame.turn % 2 === 0) {
       turnHeader.innerHTML = dogTurnHeader;
@@ -88,7 +88,8 @@ function delayDisplay(dogTurnHeader, catTurnHeader) {
     } else {
       turnHeader.innerHTML = catTurnHeader;
       gameBoard.addEventListener('click', placeToken);
-  }}, 1500);
+    }
+  }, 1500);
 }
 
 function clearSquares() {
