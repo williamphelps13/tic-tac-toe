@@ -117,3 +117,24 @@ function updateOnWin() {
     }, 1000);
   }
 };
+
+function renderBoard(playerBoard, token) {
+  if (playerBoard.includes(1)) {
+    square1.innerHTML = token; }
+  if (playerBoard.includes(2)) {
+    square2.innerHTML = token; }
+  if (playerBoard.includes(3)) {
+    square3.innerHTML = token; }
+  if (playerBoard.includes(4)) {
+    square4.innerHTML = token; }
+  if (playerBoard.includes(5)) {
+    square5.innerHTML = token; }
+  if (playerBoard.includes(6)) {
+    square6.innerHTML = token; }
+  if (playerBoard.includes(7)) {
+    square7.innerHTML = token; }
+  if (playerBoard.includes(8)) {
+    square8.innerHTML = token; }
+  if (playerBoard.includes(9)) {
+    square9.innerHTML = token; }
+};
