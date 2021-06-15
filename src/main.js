@@ -37,8 +37,8 @@ function placeToken() {
     <img id="imageTurns" class="player-turn-token" src="assets/Dog_Emoji_large.png" alt="Dog turn token">
     <h2>\'s turn</h2>`;
 
-  var catTurnHeader =
-    `<h2>It\'s</h2>
+  var catTurnHeader = `
+    <h2>It\'s</h2>
     <img id="imageTurns" class="player-turn-token" src="assets/Happy_cat_emoji.png" alt="Cat turn token">
     <h2>\'s turn</h2>`;
 
