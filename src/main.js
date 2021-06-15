@@ -131,20 +131,3 @@ function addWinsToHeader() {
   headerPlayer1Wins.innerText = `${currentGame.playerOne.wins} wins`;
   headerPlayer2Wins.innerText = `${currentGame.playerTwo.wins} wins`;
 };
-
-//FURTHER CHANGES:
-// Go through Rubric / Project Directions
-// PD - Headline/Summary
-// SRP further
-// DRY further
-// complete README
-// change to "1 win"
-
-
-
-//EXTRA:
-// - WAVE
-// - Add clear wins button
-// - Hover states and animations
-// 	- Can I make the cursor a dog when its the dog's turn
-// 	- Can the square light up in a border outlined neon when hovering over it
