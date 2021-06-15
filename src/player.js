@@ -15,4 +15,8 @@ class Player {
     var playerWins = JSON.parse(playerWinsJSON);
     this.wins += playerWins;
   }
+
+  clearStorage() {
+    localStorage.clear()
+  }
 };
