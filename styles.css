@@ -52,7 +52,7 @@ main {
 .game-board {
   display: grid;
   grid-template-columns: repeat(3,1fr);
-  grid-template-rows:repeat(3,1fr);
+  grid-template-rows: repeat(3,1fr);
   padding-top: 8vh;
 }
 
@@ -123,5 +123,5 @@ button {
 }
 
 .player-draw {
-  padding-top: 5vh
+  padding-top: 5vh;
 }
