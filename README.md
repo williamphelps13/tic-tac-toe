@@ -12,8 +12,8 @@ In England its called noughts and crosses, in Ireland Xs and Os, and in the U.S.
 - CSS
 - JavaScript
  - Game.JS - Data Model: token placement on board data, turn data, player data (id, token, and wins), check for wins, increment wins, check for draw, and reset board data
- - Player.JS - Data Model: save wins to local storage, return wins from local storage
- - Main.JS - DOM (connects DataModel to DOM providing user interface): select elements, event listeners, check turn, render board on DOM, update DOM from win, add wins to DOM, retrieve wins from local storage to DOM
+ - Player.JS - Data Model: save wins to local storage, return wins from local storage, clear wins from local storage
+ - Main.JS - DOM (connects DataModel to DOM providing user interface): select elements, event listeners, check turn, render board on DOM, update DOM from win, add wins to DOM, retrieve wins from local storage to DOM, clear wins from local storage and headers
 
 ## Set Up
 1. Fork this project to your Github account
@@ -33,7 +33,7 @@ In England its called noughts and crosses, in Ireland Xs and Os, and in the U.S.
 - If the page is refreshed the win count remains!
 - If the "Reset wins" button is clicked the wins will reset to 0
 
-
+![recording (3)](https://user-images.githubusercontent.com/22990386/122124593-b950fa80-cdec-11eb-8031-3e6cfe23b69a.gif)
 
 ## Future Additions
 - Show a chalk board tally below the win number for each win
