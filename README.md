@@ -31,3 +31,11 @@ In England its called noughts and crosses, in Ireland Xs and Os, and in the U.S.
   - Cat gets three in a row - "Cat Wins!" banner is shown and their win count increases by 1
   - Draw (all 9 squares full with no three in a row )- "It's a Draw!" banner is shown; no change to the win count
 - If the page is refreshed the win count remains!
+
+
+
+## Future Additions
+- If the delete wins button is clicked the wins will reset to 0
+- Show a chalk board tally below the win number for each win
+- Show the winning game board for each win
+- Give the option to select from a variety of animal emojis for the player token
