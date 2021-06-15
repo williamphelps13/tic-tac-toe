@@ -1,3 +1,4 @@
+/* Whole Page */
 * {
   padding: 0;
   margin: 0;
@@ -10,7 +11,7 @@ body {
   overflow: hidden;
 }
 
-
+/* Dog Wins Panel */
 .wins-panel {
   display: flex;
   flex-direction: column;
@@ -29,6 +30,7 @@ h2 {
   font-size: 3em;
 }
 
+/* Game Board Panel */
 main {
   display: flex;
   flex-direction: column;
@@ -116,6 +118,7 @@ button {
   border-bottom: none;
 }
 
+/* Dynamic Headings */
 .player-won {
   height: 10vh;
   width: 10vh;
