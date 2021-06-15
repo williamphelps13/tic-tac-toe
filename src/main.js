@@ -14,6 +14,7 @@ var square8 = document.getElementById('8');
 var square9 = document.getElementById('9');
 var allSquares = document.querySelectorAll('.square');
 var headerPlayer2Wins = document.getElementById('headerPlayer2Wins');
+var resetWinsButton = document.getElementById('resetWinsButton');
 
 // Global Variables
 var currentGame = new Game();
@@ -21,6 +22,7 @@ var currentGame = new Game();
 // Event Listeners
 window.addEventListener('load', getWins);
 gameBoard.addEventListener('click', placeToken);
+resetWinsButton.addEventListener('click', resetWins);
 
 // Functions
 function getWins() {
@@ -130,4 +132,11 @@ function renderBoard(playerBoard, token) {
 function addWinsToHeader() {
   headerPlayer1Wins.innerText = `${currentGame.playerOne.wins} wins`;
   headerPlayer2Wins.innerText = `${currentGame.playerTwo.wins} wins`;
+};
+
+function resetWins() {
+  currentGame.resetWins()
+  addWinsToHeader()
+  currentGame.playerOne.clearStorage();
+  currentGame.playerTwo.clearStorage();
 };
