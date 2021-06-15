@@ -17,6 +17,6 @@ class Player {
   }
 
   clearStorage() {
-    localStorage.clear()
+    localStorage.clear();
   }
 };
