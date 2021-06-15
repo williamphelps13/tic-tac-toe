@@ -10,7 +10,6 @@ class Game {
     this.playerTwo = new Player('two', 'assets/Happy_cat_emoji.png', 0);
   }
 
-
   checkPlayers() {
     this.checkForWin(this.board.one, this.playerOne);
     this.checkForWin(this.board.two, this.playerTwo);
