@@ -55,7 +55,8 @@ main {
   display: grid;
   grid-template-columns: repeat(3,1fr);
   grid-template-rows: repeat(3,1fr);
-  padding-top: 8vh;
+  padding-top: 25vh;
+  position: fixed;
 }
 
 button {
@@ -116,6 +117,18 @@ button {
   border-top: none;
   border-right: none;
   border-bottom: none;
+}
+
+.reset-wins-button {
+  height: 3em;
+  width: 11em;
+  background-color: white;
+  font-size: 1.3em;
+  border-width: .3em;
+  border-style: solid;
+  border-color: #004E7C;
+  margin-top: 75vh;
+  position: fixed;
 }
 
 /* Dynamic Headings */
