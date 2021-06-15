@@ -5,11 +5,14 @@ class Player {
     this.wins = wins;
   }
 
-  // saveWinsToStorage() {
-  //
-  // }
-  //
-  // retrieveWinsFromStorage() {
-  //
-  // }
-}
+  saveWinsToStorage() {
+    var winsToStorage = JSON.stringify(this.wins);
+    localStorage.setItem(this.id, winsToStorage)
+  }
+
+  retrieveWinsFromStorage() {
+    var playerWinsJSON = localStorage.getItem(this.id);
+    var playerWins = JSON.parse(playerWinsJSON);
+    this.wins += playerWins;
+  }
+};

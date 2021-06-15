@@ -16,7 +16,6 @@ body {
   flex-direction: column;
   align-items: center;
   background: linear-gradient(#007CC7, #4DA8DA, #EEFBFB);
-  height: 100vh;
   width: 25vw;
   padding-top: 12vh;
 }
@@ -41,20 +40,19 @@ main {
 .turn-header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
 
 .player-turn-token {
   height: 10vh;
   width: 10vh;
-  padding: 5vh .8vw 0vh 1.5vw;
+  padding: 5vh .2vw 2vh 1.2vw;
 }
 
 .game-board {
   display: grid;
   grid-template-columns: repeat(3,1fr);
-  grid-template-rows:repeat(3,1fr);
+  grid-template-rows: repeat(3,1fr);
   padding-top: 8vh;
 }
 
@@ -116,4 +114,14 @@ button {
   border-top: none;
   border-right: none;
   border-bottom: none;
+}
+
+.player-won {
+  height: 10vh;
+  width: 10vh;
+  padding: 5vh 1vw 4vh 1.2vw;
+}
+
+.player-draw {
+  padding-top: 5vh;
 }
