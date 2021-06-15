@@ -39,3 +39,14 @@ In England its called noughts and crosses, in Ireland Xs and Os, and in the U.S.
 - Show a chalk board tally below the win number for each win
 - Show the winning game board for each win
 - Give the option to select from a variety of animal emojis for the player token
+
+## Challenges
+- The first method created and a core function for game functionality was the checkForWin function in the Game.JS file. I started by using a .includes method with the possible wins in the bracket separated by && (e.g .includes[1 && 2 && 3]). With a quick test of functionality it appeared that the function was indeed checking if the board game included EVERY one of the numbers separated by &&. Unfortunately an hour later with more extensive testing I found it was not sufficient. After Googling there was a very helpful article (https://www.gavsblog.com/blog/find-single-or-array-of-values-in-javascript-array-using-includes) that detailed the difference between .include (by itself), .some (with .include), and .every (with .include). The arrow function was new syntax, but I found it to be nicely semantic.
+
+- Another challenge was when I was trying to interpolate or concatenate using a loop to create a variable name to refactor and remove 7 lines of repetitive code. After Googling I found that "window" would allow a concatenated string to be recognized as a global variable name.
+
+## Wins
+- A few times over the weekend I found myself in a place of being stuck for an hour or two. I reached out to my support system, but likely because of looming finals and/or final projects no one was currently available. This occurred twice and both times after a nice break I was able to come back to the problem and work through it myself. I definitely learned that rest and resets were crucial for focus and problem solving.
+
+## Deploy Link
+- This will be added when repository is made public
