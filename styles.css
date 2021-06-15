@@ -1,3 +1,4 @@
+/* Whole Page */
 * {
   padding: 0;
   margin: 0;
@@ -10,7 +11,7 @@ body {
   overflow: hidden;
 }
 
-
+/* Dog Wins Panel */
 .wins-panel {
   display: flex;
   flex-direction: column;
@@ -29,6 +30,7 @@ h2 {
   font-size: 3em;
 }
 
+/* Game Board Panel */
 main {
   display: flex;
   flex-direction: column;
@@ -53,7 +55,8 @@ main {
   display: grid;
   grid-template-columns: repeat(3,1fr);
   grid-template-rows: repeat(3,1fr);
-  padding-top: 8vh;
+  padding-top: 25vh;
+  position: fixed;
 }
 
 button {
@@ -116,6 +119,16 @@ button {
   border-bottom: none;
 }
 
+.reset-wins-button {
+  height: 3em;
+  font-size: 1.3em;
+  border-width: .3em;
+  border-color: #004E7C;
+  margin-top: 75vh;
+  position: fixed;
+}
+
+/* Dynamic Headings */
 .player-won {
   height: 10vh;
   width: 10vh;
@@ -123,5 +136,5 @@ button {
 }
 
 .player-draw {
-  padding-top: 5vh;
+  padding-top: 3vh;
 }

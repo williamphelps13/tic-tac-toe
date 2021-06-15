@@ -6,10 +6,9 @@ class Game {
     };
     this.turn = 0;
     this.currentWinner = null;
-    this.playerOne = new Player("one", 'assets/Dog_Emoji_large.png', 0);
-    this.playerTwo = new Player("two", 'assets/Happy_cat_emoji.png', 0);
+    this.playerOne = new Player('one', 'assets/Dog_Emoji_large.png', 0);
+    this.playerTwo = new Player('two', 'assets/Happy_cat_emoji.png', 0);
   }
-
 
   checkPlayers() {
     this.checkForWin(this.board.one, this.playerOne);
@@ -17,22 +16,12 @@ class Game {
   }
 
   checkForWin(playerBoard, player) {
-    if ([1, 2, 3].every(num => playerBoard.includes(num))) {
-      this.awardWinner(player);
-    } else if ([4, 5, 6].every(num => playerBoard.includes(num))) {
-      this.awardWinner(player);
-    } else if ([7, 8, 9].every(num => playerBoard.includes(num))) {
-      this.awardWinner(player);
-    } else if ([1, 4, 7].every(num => playerBoard.includes(num))) {
-      this.awardWinner(player);
-    } else if ([2, 5, 8].every(num => playerBoard.includes(num))) {
-      this.awardWinner(player);
-    } else if ([3, 6, 9].every(num => playerBoard.includes(num))) {
-      this.awardWinner(player);
-    } else if ([1, 5, 9].every(num => playerBoard.includes(num))) {
-      this.awardWinner(player);
-    } else if ([3, 5, 7].every(num => playerBoard.includes(num))) {
-      this.awardWinner(player);
+    var possibleWins = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]];
+
+    for (var i = 0; i < possibleWins.length; i++) {
+      if (possibleWins[i].every(num => playerBoard.includes(num))) {
+        this.awardWinner(player);
+      }
     }
   }
 
@@ -40,9 +29,9 @@ class Game {
     this.addToWins(player);
 
     if (player === this.playerOne) {
-      this.currentWinner = "one";
+      this.currentWinner = 'one';
     } else if (player === this.playerTwo) {
-      this.currentWinner = "two";
+      this.currentWinner = 'two';
     }
 
     this.resetBoard();
@@ -54,7 +43,7 @@ class Game {
 
   checkForDraw() {
     if (this.board.one.length === 5 || this.board.two.length === 5) {
-      this.currentWinner = "draw";
+      this.currentWinner = 'draw';
       this.resetBoard();
     }
   }
@@ -62,5 +51,10 @@ class Game {
   resetBoard() {
     this.board.one = [];
     this.board.two = [];
+  }
+
+  resetWins() {
+    this.playerOne.wins = 0;
+    this.playerTwo.wins = 0;
   }
 };
